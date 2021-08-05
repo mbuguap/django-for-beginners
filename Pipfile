@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "*"
 gunicorn = "*"
+autopep8 = "*"
 
 [dev-packages]
 
