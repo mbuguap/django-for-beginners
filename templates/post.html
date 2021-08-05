@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 
+{% block content %}
 
 <h1>Message board homepage</h1>
 <ul>
@@ -6,3 +8,5 @@
 <li>{{ post.text }}</li>
 {% endfor %}
 </ul>
+
+{% endblock content %}
