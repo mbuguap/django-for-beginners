@@ -3,5 +3,16 @@
 {% block title %}About{% endblock title %}
 
 {% block content %}
-<h1>About page</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">About</li>
+    </ol>
+  </nav>
+
+
+<h1 class="display-5">About page</h1>
+
+<p class="lead">Version 1.0.0</p>
 {% endblock content %}

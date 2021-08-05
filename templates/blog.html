@@ -1,12 +1,35 @@
 {% extends 'base.html' %}
 
-
-
 {% block content %}
+
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Blogs</li>
+  </ol>
+</nav>
+
+
+<h2 class="display-5">Blogs</h2>
+
 {% for post in object_list %}
-<div class="post-entry">
-<h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-<p>{{ post.body }}</p>
-</div>
+
+
+
+<div class="card mt-3" >
+    
+    <div class="card-body">
+      <h5 class="card-title"><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h5>
+      <p class="card-text">{{ post.body }}</p>
+      <a class="btn btn-primary" href="{% url 'post_detail' post.pk %}">View Blog</a>
+    </div>
+  </div>
+
+
+
+
+
+
 {% endfor %}
 {% endblock content %}

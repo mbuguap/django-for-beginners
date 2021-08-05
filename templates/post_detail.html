@@ -1,12 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="post-entry">
-<h2>{{ object.title }}</h2>
-<p>{{ object.body }}</p>
-</div>
 
-<p><a href="{% url 'post_edit' object.pk %}">+ Edit Blog Post</a></p>
-<p><a href="{% url 'post_delete' object.pk %}">+ Delete Blog Post</a></p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'blog' %}">Blogs</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ object.title }}</li>
+  </ol>
+</nav>
+
+<h2 class="display-5">About - {{ object.title }}</h2>
+
+<div class="card">
+
+    <div class="card-body">
+      <h5 class="card-title">{{ object.title }}</h5>
+      <p class="card-text">{{ object.body }}.</p>
+
+
+      <a href="{% url 'post_edit' object.pk %}" class="card-link"> <i class="bi bi-pencil-square"></i> Edit Blog Post </a>
+      <a href="{% url 'post_delete' object.pk %}" class="card-link "> <i class="bi bi-trash-fill"></i> Delete Blog Post</a>
+    </div>
+  </div>
+
+
 
 {% endblock content %}

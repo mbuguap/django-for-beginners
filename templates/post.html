@@ -1,12 +1,22 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Posts</li>
+  </ol>
+</nav>
 
-<h1>Message board homepage</h1>
-<ul>
-{% for post in all_posts_list %}
-<li>{{ post.text }}</li>
-{% endfor %}
-</ul>
+<h2 class="display-5">Posts From Backend</h2>
+
+<span>
+  {% for post in all_posts_list %}
+  <div class="card mt-3">
+    <div class="card-body">
+      <p class="card-text">{{ post.text }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</span>
 
 {% endblock content %}

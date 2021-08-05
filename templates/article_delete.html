@@ -1,10 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Delete</h1>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'article_list' %}">Articles</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Delete - {{ object.title }}</li>
+    </ol>
+  </nav>
+
+
+  <div class="card" >
+
+    <div class="card-body bg-info text-white">
+
+    <h2 class="card-title text-center">Delete</h2>
+<div class="text-center">
 <form action="" method="post">{% csrf_token %}
 <p>Are you sure you want to delete "{{ article.title }}"?</p>
 <button class="btn btn-danger ml-2" type="submit">Confirm</button>
 </form>
+</div>
+</div>
+</div>
 
 {% endblock content %}

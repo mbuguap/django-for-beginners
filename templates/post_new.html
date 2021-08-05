@@ -4,9 +4,18 @@
 {% block content %}
 
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'blog' %}">Blogs</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Create New Blog Post</li>
+    </ol>
+  </nav>
 
+<div class="card" >
 
-    <h2 class="display-4 text-center">New post</h2>
+    <div class="card-body bg-info text-white">
+
+    <h2 class="card-title text-center">New Post Blog</h2>
     
     <div class="row">
         <div class="col-md-6 mx-auto">
@@ -19,6 +28,9 @@
         </div>
     </div>
     
+    </div>
+
+</div>
 
 
 

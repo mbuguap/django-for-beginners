@@ -6,31 +6,46 @@
 {% block content %}
 
 {% for article in object_list %}
-<div class="card">
-<div class="card-header">
-<span class="font-weight-bold">{{ article.title }}</span> &middot;
-<span class="text-muted">by {{ article.author }}
-| {{ article.date }}</span>
-</div>
 
-<div class="card-body">
-    <!-- Changes start here! -->
-    <p>{{ article.body }}</p>
-    <a href="{% url 'article_edit' article.pk %}">Edit</a> |
-    <a href="{% url 'article_delete' article.pk %}">Delete</a>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Articles</li>
+    </ol>
+  </nav>
+  
+
+
+<div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            {{ article.title }} &nbsp; <span class="text-muted"> by {{ article.author }} | {{ article.date }}</span>
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            {{ article.body }}
+
+                <a class="btn btn-primary" href="{% url 'article_detail' article.pk %}"
+                role="button">View More Details About This Article</a>
+<hr />
+                <h5>Comments</h5>
+
+                {% for comment in article.comments.all %}
+               
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">{{ comment.author }} - {{ comment }} </li>
+                  </ul>
+
+                  {% endfor %}
+        </div>
+
+      </div>
     </div>
-    <div class="card-footer">
-    {% for comment in article.comments.all %}
-    <p>
-    <span class="font-weight-bold">
-    {{ comment.author }} &middot;
-    </span>
-    {{ comment }}
-    </p>
-    {% endfor %}
-    </div>
-    <!-- Changes end here! -->
-    </div>
-    <br />
+   
+  </div>
+
     {% endfor %}
     {% endblock content %}

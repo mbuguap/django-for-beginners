@@ -1,18 +1,56 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-
-
-
-    <h1 class="display-4">Django For Beginners</h1>
-    <p class="lead">CRUD Operations</p>
-    <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
-    role="button">View All Articles</a>
-    </p>
    
+
+    <section
+    class="bg-dark text-light p-lg-0 pt-lg-5 text-center text-sm-start"
+  >
+    <div>
+      <div class="d-sm-flex align-items-center justify-content-between">
+        <div>
+          <h1 class="p-3">Django For Beginners </span></h1>
+          <p class="p-3 lead my-4">
+            Login, Register, Forgot Password, Change Password, CRUD Operations etc
+          </p>
+          <p class="lead p-3">
+            <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
+            role="button">View All Articles</a>
+            </p>
+          
+        </div>
+        <img
+          class="img-fluid w-50 d-none d-sm-block"
+          src="{% static 'images/showcase.svg' %}"
+          alt=""
+        />
+      </div>
+    </div>
+  </section>
+
+<div class="py-5">
+   <section class="bg-primary text-light p-5">
+      <div class="container">
+        <div class="d-md-flex justify-content-between align-items-center">
+          <h3 class="mb-3 mb-md-0">View Posts & Blogs</h3>
+
+          <p class="lead p-3">
+            <a class="btn btn-info btn-lg" href="{% url 'post' %}"
+            role="button">View All Posts</a>
+            </p>
+
+            <p class="lead p-3">
+                <a class="btn btn-danger btn-lg" href="{% url 'blog' %}"
+                role="button">View All Blogs</a>
+                </p>
+          
+        </div>
+      </div>
+    </section>
+</div>
     
 
 {% endblock content %}

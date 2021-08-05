@@ -1,13 +1,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="article-entry">
-<h2>{{ object.title }}</h2>
-<p>by {{ object.author }} | {{ object.date }}</p>
-<p>{{ object.body }}</p>
-</div>
-<p><a href="{% url 'article_edit' article.pk %}">Edit</a> |
-<a href="{% url 'article_delete' article.pk %}">Delete</a></p>
-<p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'article_list' %}">Articles</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Article - {{ object.title }}</li>
+    </ol>
+  </nav>
+
+  <h2 class="display-5">About - {{ object.title }}</h2>
+
+<div class="card">
+
+    <div class="card-body">
+      <h5 class="card-title">{{ object.title }}</h5>
+
+      <h6 class="card-title">by {{ object.author }} | {{ object.date }}</h6>
+
+      <p class="card-text">{{ object.body }}</p>
+
+
+      <a class="card-link" href="{% url 'article_edit' article.pk %}"><i class="bi bi-pencil-square"></i> Edit</a> 
+
+        <a class="card-link" href="{% url 'article_delete' article.pk %}"><i class="bi bi-trash-fill"></i> Delete</a>
+
+        <a class="card-link" href="{% url 'article_list' %}"> <i class="bi bi-box-arrow-left"></i> All Articles</a>
+
+    </div>
+  </div>
+
 
 {% endblock content %}
