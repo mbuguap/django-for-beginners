@@ -8,6 +8,8 @@ django = "*"
 gunicorn = "*"
 autopep8 = "*"
 whitenoise = "*"
+crispy-bootstrap5 = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
