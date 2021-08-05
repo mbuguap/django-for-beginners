@@ -47,10 +47,16 @@
                 <a href="{% url 'post' %}" class="nav-link">Posts</a>
               </li>
               <li class="nav-item">
+                <a href="{% url 'article_list' %}" class="nav-link">Articles</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'article_new' %}" class="nav-link"> <i class="bi bi-plus"></i> Add Articles</a>
+              </li>
+              <li class="nav-item">
                 <a href="{% url 'blog' %}" class="nav-link">Blog</a>
               </li>
               <li class="nav-item">
-                <a href="{% url 'post_new' %}" class="nav-link"> <i class="bi bi-pencil-fill"></i> New Blog Post</a>
+                <a href="{% url 'post_new' %}" class="nav-link"> <i class="bi bi-plus"></i> New Blog Post</a>
               </li>
             </ul>
 

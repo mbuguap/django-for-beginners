@@ -3,5 +3,16 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<h1>Homepage</h1>
+
+
+
+    <h1 class="display-4">Django For Beginners</h1>
+    <p class="lead">CRUD Operations</p>
+    <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
+    role="button">View All Articles</a>
+    </p>
+   
+    
+
 {% endblock content %}

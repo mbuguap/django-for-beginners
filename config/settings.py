@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'posts',
     'blog',
     'accounts',
+    'articles',
 ]
 
 AUTH_USER_MODEL = 'accounts.CustomUser'
@@ -145,3 +146,10 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# DEFAULT_FROM_EMAIL = 'your_custom_email_account'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = 'sendgrid_password'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
